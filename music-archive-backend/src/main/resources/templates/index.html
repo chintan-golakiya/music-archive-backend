@@ -9,6 +9,16 @@
 	<div class="text-center m-7 py-2 px-3">
 		<h1 class="text-4xl font-extrabold text-white">Music Archive</h1>
 		<img class="max-w-[200px] mx-auto" src="baner.gif"/>
+		<div>
+			<form method="POST" enctype="multipart/form-data" action="/">
+				<label class="mx-2 text-white">Song Name :</label>
+				<input class="bg-black ring-1 ring-gray-800 text-white font-medium p-1 rounded-xl" name="songName" type="text"/>
+				<br/>
+				<label class="mx-2 text-white">File to upload :</label>
+				<input class="bg-black ring-1 ring-gray-800 text-white font-medium p-1 rounded-xl" name="file" type="file"/>
+				<button class="bg-black ring-1 ring-gray-800 text-white font-medium p-1 my-2 text-xl rounded-xl " type="submit">Upload file</button>
+			</form>
+		</div>
 	</div>
 
 	<table class="bg-white rounded-2xl mx-auto">
