@@ -1,0 +1,35 @@
+<!Doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Music Archive</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-700 mx-auto">
+	<div class="text-center m-7 py-2 px-3">
+		<h1 class="text-4xl font-extrabold text-white">Music Archive</h1>
+		<img class="max-w-[200px] mx-auto" src="baner.gif"/>
+	</div>
+
+	<table class="bg-white rounded-2xl mx-auto">
+		<thead>
+			<tr>
+				<th class="px-6 py-4 border border-collapse border-gray-800">Song Name</th>
+				<th class="px-6 py-4 border border-collapse border-gray-800">Audio</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="song : ${songs}">
+				<td th:text="${song.title}" class="px-6 py-4 border border-collapse border-gray-800">
+					Song Name
+				</td>
+				<td class="px-6 py-4 border border-collapse border-gray-800">
+					<audio controls>
+						<source th:src="${song.fileName}" type="audio/mpeg">
+					</audio>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
