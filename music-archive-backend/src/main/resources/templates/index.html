@@ -35,7 +35,7 @@
 				</td>
 				<td class="px-6 py-4 border border-collapse border-gray-800">
 					<audio controls>
-						<source th:src="${song.fileName}" type="audio/mpeg">
+						<source th:src="${fileprefix}+${song.fileName}" type="audio/mpeg">
 					</audio>
 				</td>
 			</tr>

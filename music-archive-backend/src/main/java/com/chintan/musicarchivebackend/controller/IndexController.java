@@ -36,6 +36,7 @@ public class IndexController {
 	public String getHomepage(Model model) {
 		List<Song> songs = songRepository.findAll();
 		model.addAttribute("songs",songs);
+		model.addAttribute("fileprefix",fileService.getFileServerPath());
 		return "index";
 	}
 
@@ -45,8 +46,7 @@ public class IndexController {
 		fileService.save(file);
 		Song s = new Song();
 		s.setTitle(songName);
-		s.setFileName(fileService.getUploadPath() + file.getOriginalFilename());
-		System.out.println("before save :"+s.getTitle());
+		s.setFileName(file.getOriginalFilename());
 		Song result = songRepository.save(s);
 		System.out.println(result.getTitle());
 		return "redirect:/";

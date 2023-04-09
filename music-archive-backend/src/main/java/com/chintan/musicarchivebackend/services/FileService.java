@@ -17,14 +17,22 @@ public class FileService {
 	@Value("${upload.path}")
 	private String uploadPath;
 	
+	@Value("${fileserver}")
+	private String fileServerPath;
+	
 	public String getUploadPath() {
 		return uploadPath;
+	}
+	
+	public String getFileServerPath() {
+		return fileServerPath;
 	}
 
 	@PostConstruct
 	public void init() {
 		try {
 			System.out.println("File upload path :" + uploadPath);
+			System.out.println("File server path :" + fileServerPath);
 			Files.createDirectories(Paths.get(uploadPath));
 		} catch(Exception e) {
 			throw new RuntimeException("Could not create upload folder!! Error: " + e.getMessage());
